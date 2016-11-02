@@ -31,7 +31,7 @@ module RedlightCamera
 
     private
 
-    def convert_array_to_objects(violation_array)
+    def self.convert_array_to_objects(violation_array)
       collection = []
       violation_array.each do |violation_hash|
         collection << Violation.new(violation_hash)
@@ -39,7 +39,7 @@ module RedlightCamera
       collection
     end
 
-    def convert_search_hash_to_string(search_hash)
+    def self.convert_search_hash_to_string(search_hash)
       search_array = []
       search_hash.each do |key, value|
         search_array << "#{key}=#{value}"
